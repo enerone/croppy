@@ -29,7 +29,8 @@ class RegistrationController extends BaseController {
 	 * @return Response
 	 */
 	public function create() {
-		return View::make('registration.create');
+        $timezones = Timezone::all();
+		return View::make('registration.create')->withTimezone($timezones);
 	}
 
 	public function store() {

@@ -44,6 +44,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasMany('Larabook\Statuses\Status')->latest();
 	}
 
+    public function timezones(){
+        return $this->hasOne('Larabook\Registration\Timezone');
+    }
 	/**
 	 * Register a new user
 	 * @param  $username
@@ -58,6 +61,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$user->raise(new UserRegistered($user));
 		return $user;
 	}
+
+
 
     /**
      * Verifies current user

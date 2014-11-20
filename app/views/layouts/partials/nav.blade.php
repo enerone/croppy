@@ -7,12 +7,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ Auth::check() ? route('statuses_path') : route('home') }}">Larabook</a>
+      <a class="navbar-brand" href="{{ Auth::check() ? route('statuses_path') : route('home') }}">Mayordomo de cultivo</a>
 
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active">{{ link_to_route('users_path', 'Browse Users') }}</li>
+        <li class="active">{{ link_to_route('users_path', 'Seguimientos') }}</li>
 
 
       </ul>
@@ -38,8 +38,8 @@
 
             </li>
         @else
-         <li>{{ link_to_route('register_path', 'Register') }}</li>
-         <li>{{ link_to_route('login_path', 'Log In') }}</li>
+         <li>{{ link_to_route('register_path', 'Registrate') }}</li>
+         <li>{{ link_to_route('login_path', 'Ingresá') }}</li>
           
          
          
