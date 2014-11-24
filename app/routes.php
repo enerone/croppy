@@ -22,6 +22,10 @@ Route::get('/', [
 	'uses' => 'PagesController@home'
 ]);
 
+
+
+
+
 Route::get('register', [
 	'as' => 'register_path',
 	'uses' => 'RegistrationController@create'

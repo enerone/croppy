@@ -14,7 +14,12 @@
             <!-- Username form input -->
             <div class="form-group">
                 {{ Form::label('gmt','GMT:') }}
-                {{ Form::select('user_timezone',$timezones,['class'=>'form-control']) }}
+                {{ Form::select('user_timezone',$timezones,30,['class'=>'form-control']) }}
+            </div>
+            <!-- Username form input -->
+            <div class="form-group">
+                {{ Form::label('country','País:') }}
+                {{ Form::select('country',$countries,'ARG',['class'=>'form-control']) }}
             </div>
 	        <!-- Email form input -->
 	        	<div class="form-group">

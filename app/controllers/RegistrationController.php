@@ -2,7 +2,10 @@
 
 
 use Larabook\Forms\RegistrationForm;
+use Larabook\Registration\Country;
 use Larabook\Registration\RegisterUserCommand;
+use Larabook\Registration\Timezone;
+
 
 
 class RegistrationController extends BaseController {
@@ -29,8 +32,28 @@ class RegistrationController extends BaseController {
 	 * @return Response
 	 */
 	public function create() {
-        $timezones = Timezone::all();
-		return View::make('registration.create')->withTimezone($timezones);
+       $timezones = Timezone::all();
+        $countries = Country::all();
+       // $timezones = DB::table('timezones')->get();
+
+        $options = array();
+
+        foreach ($timezones as $tz)
+        {
+            $options[$tz->id] =  $tz->gmt.' | '.  $tz->timezone_location;
+        }
+
+        $paises = array();
+
+        foreach ($countries as $ct)
+        {
+            $paises[$ct->Code] =  $ct->Name;
+        }
+
+        return View::make('registration.create')->withTimezones($options)->withCountries($paises);
+
+
+		//return View::make('registration.create')->withTimezones($timezones);
 	}
 
 	public function store() {

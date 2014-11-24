@@ -5,16 +5,16 @@ class RegisterUserCommand {
 	public $email;
 	public $password;
     public $user_timezone;
-    private $pais;
-    private $provincia;
+    public $country;
 
-    function __construct($username, $email, $password, $user_timezone, $pais, $provincia) {
+
+    function __construct($username, $email, $password, $user_timezone, $country) {
 
 		$this->username = $username;
 		$this->email = $email;
 		$this->password = $password;
         $this->user_timezone = $user_timezone;
-        $this->pais = $pais;
-        $this->provincia = $provincia;
+        $this->country = $country;
+
     }
 }

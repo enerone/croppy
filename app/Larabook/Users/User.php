@@ -14,7 +14,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	use UserTrait, RemindableTrait, EventGenerator, PresentableTrait, FollowableTrait;
 	//use EventGenerator;
 
-	protected $fillable = ['username', 'email', 'password','user_timezone', pais, provincia];
+	protected $fillable = ['username', 'email', 'password','user_timezone', 'country' ];
 
 	/**
 	 * The database table used by the model.
@@ -44,9 +44,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasMany('Larabook\Statuses\Status')->latest();
 	}
 
-    public function timezones(){
-        return $this->hasOne('Larabook\Registration\Timezone');
-    }
+
+
 	/**
 	 * Register a new user
 	 * @param  $username
@@ -54,9 +53,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @param  $password
 	 * @return static
 	 */
-	public static function register($username, $email, $password)
+	public static function register($username, $email, $password, $user_timezone, $country )
     {
-		$user = new static (compact('username', 'email', 'password', 'user_timezone', 'pais','provincia'));
+		$user = new static (compact('username', 'email', 'password', 'user_timezone', 'country'));
 
 		$user->raise(new UserRegistered($user));
 		return $user;
