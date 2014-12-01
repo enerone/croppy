@@ -100,3 +100,20 @@ Route::delete('follow/{id}', [
 ]);
 //Password reset
 Route::controller('password','RemindersController');
+
+/**
+ * Seguimientos
+ */
+Route::get('seguimientos', [
+    'as' => 'seguimientos_path',
+    'uses' => 'SeguimientosController@index'
+]);
+
+/**
+ * Tipos de Cultivos
+ **/
+Route::get('tiposcultivo', [
+    'as' => 'tiposcultivo_path',
+    'uses' => 'TiposcultivoController@index'
+]);
+
