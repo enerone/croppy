@@ -1,7 +1,12 @@
 <component name="ProjectDictionaryState">
   <dictionary name="fabi">
     <words>
+      <w>descripcion</w>
+      <w>imagen</w>
       <w>pais</w>
+      <w>tipocultivo</w>
+      <w>tiposcultivo</w>
+      <w>titulo</w>
     </words>
   </dictionary>
 </component>

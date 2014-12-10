@@ -116,4 +116,11 @@ Route::get('tiposcultivo', [
     'as' => 'tiposcultivo_path',
     'uses' => 'TiposcultivoController@index'
 ]);
-
+Route::get('tiposcultivoCreate', [
+    'as' => 'tiposcultivoCreate_path',
+    'uses' => 'TiposcultivoController@create'
+]);
+Route::post('tiposcultivoCreate', [
+    'as' => 'tiposcultivoCreate_path',
+    'uses' => 'TiposcultivoController@create'
+]);

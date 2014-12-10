@@ -1,5 +1,9 @@
 <?php
+use Larabook\Tiposcultivo\Tipocultivo;
 
+/**
+ * @property mixed tipocultivoForm
+ */
 class TiposcultivoController extends \BaseController {
 
 	/**
@@ -10,8 +14,9 @@ class TiposcultivoController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
-	}
+        $tiposdecultivo = Tipocultivo::all();
+        return View::make('tiposcultivo.index')->withTiposdecultivo($tiposdecultivo);
+    }
 
 	/**
 	 * Show the form for creating a new resource.
@@ -21,7 +26,7 @@ class TiposcultivoController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+        return View::make('tiposcultivo.create');
 	}
 
 	/**
@@ -32,7 +37,15 @@ class TiposcultivoController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+        $this->tipocultivoForm->validate(Input::all());
+
+        $tipocultivo = $this->execute(RegisterTipocultivoCommand::class);
+
+
+
+        Flash::message('Tipo de cultivo satisfactoriamente creado');
+
+        return Redirect::home();
 	}
 
 	/**
