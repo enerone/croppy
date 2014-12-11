@@ -14,7 +14,7 @@
         <!-- Email form input -->
         <div class="form-group">
             {{ Form::label('descripcion','Descripción:') }}
-            {{ Form::text('descripcion',null,['class'=>'form-control']) }}
+            {{ Form::textarea('descripcion',null,['class'=>'form-control']) }}
         </div>
         <!-- Password form input -->
         <div class="form-group">
